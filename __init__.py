@@ -16,7 +16,13 @@ from __future__ import print_function
 # executed on PyMOL's startup. Only import such modules inside functions.
 
 import os
+import pymol
 
+def set_bg_color(color="black"):
+    try:
+        pymol.cmd.bg_color(color)
+    except pymol.CmdException as e:
+        print(f"Error: {e}")
 
 def __init_plugin__(app=None):
     '''
@@ -92,9 +98,15 @@ def make_dialog():
         if filename:
             form.input_filename.setText(filename)
 
+    # callback for the "Set Background Color" button
+    def set_background_color():
+        color = form.input_bg_color.text()
+        set_bg_color(color)
+
     # hook up button callbacks
     form.button_ray.clicked.connect(run)
     form.button_browse.clicked.connect(browse_filename)
+    form.button_set_bg_color.clicked.connect(set_background_color)
     form.button_close.clicked.connect(dialog.close)
 
     return dialog
