@@ -141,6 +141,23 @@ Based on &quot;PyMOL Rendering Plugin&quot;</string>
        </property>
       </widget>
      </item>
+     <item>
+            <widget class="QLabel" name="label_bg_color">
+                  <property name="text">
+                        <string notr="true">Background Color</string>
+                  </property>
+            </widget>
+      </item>
+      <item>
+            <widget class="QLineEdit" name="input_bg_color"/>
+      </item>
+      <item>
+            <widget class="QPushButton" name="button_set_bg_color">
+                  <property name="text">
+                        <string notr="true">Set Background Color</string>
+                  </property>
+            </widget>
+      </item>
     </layout>
    </item>
    <item>
