@@ -141,7 +141,7 @@ Based on &quot;PyMOL Rendering Plugin&quot;</string>
        </property>
       </widget>
      </item>
-     <item>
+      <item>
             <widget class="QLabel" name="label_bg_color">
                   <property name="text">
                         <string notr="true">Background Color</string>
@@ -149,7 +149,39 @@ Based on &quot;PyMOL Rendering Plugin&quot;</string>
             </widget>
       </item>
       <item>
-            <widget class="QLineEdit" name="input_bg_color"/>
+            <widget class="QSpinBox" name="input_bg_color_r">
+                  <property name="minimum">
+                        <number>0</number>
+                  </property>
+                  <property name="maximum">
+                        <number>255</number>
+                  </property>
+                  <property name="value">
+                        <number>0</number>
+                  </property>
+            </widget>
+            <widget class="QSpinBox" name="input_bg_color_g">
+                  <property name="minimum">
+                        <number>0</number>
+                  </property>
+                  <property name="maximum">
+                        <number>255</number>
+                  </property>
+                  <property name="value">
+                        <number>0</number>
+                  </property>
+            </widget>
+            <widget class="QSpinBox" name="input_bg_color_b">
+                  <property name="minimum">
+                        <number>0</number>
+                  </property>
+                  <property name="maximum">
+                        <number>255</number>
+                  </property>
+                  <property name="value">
+                        <number>0</number>
+                  </property>
+            </widget>
       </item>
       <item>
             <widget class="QPushButton" name="button_set_bg_color">

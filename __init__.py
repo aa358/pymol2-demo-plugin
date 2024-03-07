@@ -18,9 +18,11 @@ from __future__ import print_function
 import os
 import pymol
 
-def set_bg_color(color="black"):
+def set_bg_color(r, g, b):
     try:
-        pymol.cmd.bg_color(color)
+        color = [int(r * 255), int(g * 255), int(b * 255)]
+        pymol.cmd.set_color("custom_bg_color", color)
+        pymol.cmd.bg_color("custom_bg_color")
     except pymol.CmdException as e:
         print(f"Error: {e}")
 
@@ -100,8 +102,10 @@ def make_dialog():
 
     # callback for the "Set Background Color" button
     def set_background_color():
-        color = form.input_bg_color.text()
-        set_bg_color(color)
+        r = form.input_bg_color_r.value() / 255.0
+        g = form.input_bg_color_g.value() / 255.0
+        b = form.input_bg_color_b.value() / 255.0
+        set_bg_color(r, g, b)
 
     # hook up button callbacks
     form.button_ray.clicked.connect(run)
